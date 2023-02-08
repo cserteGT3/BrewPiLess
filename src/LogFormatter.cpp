@@ -50,19 +50,19 @@ size_t dataSprintf(char *buffer,const char *format,const char* invalid)
 			}else if(ch == 'b'){
 				float  beerTemp = brewPi.getBeerTemp();
 
-				d += printFloat(buffer+d,beerTemp,1,IS_FLOAT_TEMP_VALID(beerTemp),invalid);
+				d += printFloat(buffer+d,beerTemp,2,IS_FLOAT_TEMP_VALID(beerTemp),invalid);
 			}else if(ch == 'B'){
 				float  beerSet = brewPi.getBeerSet();
-				d += printFloat(buffer+d,beerSet,1,IS_FLOAT_TEMP_VALID(beerSet),invalid);
+				d += printFloat(buffer+d,beerSet,2,IS_FLOAT_TEMP_VALID(beerSet),invalid);
 			}else if(ch == 'f'){
 				float fridgeTemp = brewPi.getFridgeTemp();
-				d += printFloat(buffer+d,fridgeTemp,1,IS_FLOAT_TEMP_VALID(fridgeTemp),invalid);
+				d += printFloat(buffer+d,fridgeTemp,2,IS_FLOAT_TEMP_VALID(fridgeTemp),invalid);
 			}else if(ch == 'F'){
 				float fridgeSet = brewPi.getFridgeSet();
-				d += printFloat(buffer+d,fridgeSet,1,IS_FLOAT_TEMP_VALID(fridgeSet),invalid);
+				d += printFloat(buffer+d,fridgeSet,2,IS_FLOAT_TEMP_VALID(fridgeSet),invalid);
 			}else if(ch == 'r'){
 				float  roomTemp = brewPi.getRoomTemp();
-				d += printFloat(buffer+d,roomTemp,1,IS_FLOAT_TEMP_VALID(roomTemp),invalid);
+				d += printFloat(buffer+d,roomTemp,2,IS_FLOAT_TEMP_VALID(roomTemp),invalid);
 			}else if(ch == 'g'){
 				float sg=externalData.gravity();
 				d += printFloat(buffer+d,sg,4,IsGravityValid(sg),invalid);
@@ -81,10 +81,10 @@ size_t dataSprintf(char *buffer,const char *format,const char* invalid)
 			}
 			else if(ch == 'v'){
 				float vol=externalData.deviceVoltage();
-				d += printFloat(buffer+d,vol,1,IsVoltageValid(vol),invalid);
+				d += printFloat(buffer+d,vol,2,IsVoltageValid(vol),invalid);
 			}else if(ch == 'a'){
 				float at=externalData.auxTemp();
-				d += printFloat(buffer+d,at,1,IS_FLOAT_TEMP_VALID(at),invalid);
+				d += printFloat(buffer+d,at,2,IS_FLOAT_TEMP_VALID(at),invalid);
 			}else if(ch == 't'){
 				float tilt=externalData.tiltValue();
 				d += printFloat(buffer+d,tilt,2,true,invalid);
